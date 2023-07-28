@@ -20,14 +20,15 @@ export default function (app) {
             let body = JSON.stringify({
                 "session": [{
                     "UserName": utils.getSafe(() => req.user.id, ''),
-                    "familyName": utils.getSafe(() => req.user.name.familyName, ''),
-                    "givenName": utils.getSafe(() => req.user.name.givenName, ''),
+                    "familyName": utils.getSafe(() => req.user.attr.familyName, ''),
+                    "givenName": utils.getSafe(() => req.user.attr.givenName, ''),
                     "emails": utils.getSafe(() => req.user.emails, ''),
                     "Language": locale.getLocaleReq(req)
                 }]
             });
             return res.type("application/json").status(200).send(body)
         } catch (err) {
+            app.log.error(err)
             return res.type("text/plain").status(500).send(`ERROR: ${err.toString()}`)
         }
     })

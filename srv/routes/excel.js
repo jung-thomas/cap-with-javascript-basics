@@ -33,7 +33,7 @@ export default function (app) {
 
             let dbQuery = SELECT
             .from(cds.entities.Books)
-            .limit(10)
+            .limit(10)			
             const results = await cds.run(dbQuery)
 			let out = []
 			for (let item of results) {
@@ -46,7 +46,8 @@ export default function (app) {
 			res.header("Content-Disposition", "attachment; filename=Excel.xlsx")
 			return res.type("application/vnd.ms-excel").status(200).send(result)
 		} catch (e) {
-			return res.type("text/plain").status(500).send(`ERROR: ${JSON.stringify(e)}`)
+			app.log.error(e)
+			return res.type("text/plain").status(500).send(`${e}`)
 		}
 	})
 

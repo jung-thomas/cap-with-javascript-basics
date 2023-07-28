@@ -4,7 +4,7 @@ using { sap.capire.bookshop as my } from '../db/schema';
   'odata-v4',
   'graphql'
 ]
-service CatalogService {
+service CatalogService  @(requires: 'authenticated-user'){
 
   /** For displaying lists of Books */
   entity ListOfBooks as projection on Books

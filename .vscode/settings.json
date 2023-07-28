@@ -1,4 +1,8 @@
 {
     "SAP HANA Database Explorer.displaySapWebAnalyticsStartupNotification": false,
-    "SAP HANA Database Artifacts.displaySapWebAnalyticsStartupNotification": false
+    "SAP HANA Database Artifacts.displaySapWebAnalyticsStartupNotification": false,
+    "cSpell.words": [
+        "cloudnative",
+        "healthcheck"
+    ]
 }

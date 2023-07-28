@@ -4,7 +4,9 @@
     "es2022": true,
     "node": true,
     "jest": true,
-    "mocha": true
+    "mocha": true,
+    "commonjs": false,
+    "es6": true
   },
   "globals": {
     "SELECT": true,
@@ -17,7 +19,13 @@
     "CDL": true,
     "CQL": true,
     "CXL": true,
-    "cds": true
+    "cds": true,
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parserOptions": {
+      "ecmaVersion": 2022,
+      "sourceType": "module"
   },
   "rules": {
     "no-console": "off",

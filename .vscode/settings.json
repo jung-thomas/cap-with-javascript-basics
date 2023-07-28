@@ -3,6 +3,8 @@
     "SAP HANA Database Artifacts.displaySapWebAnalyticsStartupNotification": false,
     "cSpell.words": [
         "cloudnative",
-        "healthcheck"
+        "healthcheck",
+        "langparser",
+        "timsestamp"
     ]
 }

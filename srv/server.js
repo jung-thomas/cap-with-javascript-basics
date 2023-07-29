@@ -5,6 +5,7 @@ import { existsSync as fileExists } from 'fs'
 import { fileURLToPath } from 'url'
 import upath from 'upath'
 import { glob } from 'glob'
+import express from 'express'
 
 // @ts-ignore
 const __dirname = fileURLToPath(new URL('.', import.meta.url))
@@ -18,19 +19,8 @@ cds
       const { default: expressFileExc } = await import(`file://${expressFile}`)
       expressFileExc(app, cds)
     }
-
-    //Load routes
-    let routesDir = path.join(__dirname, './routes/**/*.js')
-    let files = await glob(upath.normalize(routesDir))
-    if (files.length !== 0) {
-      for (let file of files) {
-        app.log(`Loading: ${file}`)
-        const { default: Route } = await import(`file://${file}`)
-        Route(app, server)
-      }
-    }
-
   })
+
   .on('serving', service => {
     addLinkToGraphQl(service)
     addCustomLinks(service)
@@ -71,4 +61,18 @@ function addCustomLinks(service) {
 
 }
 
-export const server = cds.server
+export default async function (o) {
+  o.app = express()
+  o.app.httpServer = await cds.server(o)
+  //Load routes
+  let routesDir = path.join(__dirname, './routes/**/*.js')
+  let files = await glob(upath.normalize(routesDir))
+  if (files.length !== 0) {
+    for (let file of files) {
+      cds.log('nodejs').info(`Loading: ${file}`)
+      const { default: Route } = await import(`file://${file}`)
+      Route(o.app, o.app.httpServer)
+    }
+  }
+  return o.app.httpServer
+}

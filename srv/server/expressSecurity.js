@@ -5,10 +5,10 @@ export default function (app) {
     app.use(helmet())
     app.use(helmet.contentSecurityPolicy({
         directives: {
-            defaultSrc: ["'self'", "*.hana.ondemand.com"],
-            styleSrc: ["'self'", "*.hana.ondemand.com", "'unsafe-inline'"],
-            scriptSrc: ["'self'", "*.hana.ondemand.com", "'unsafe-inline'", "'unsafe-eval'", "cdnjs.cloudflare.com"],
-            imgSrc: ["'self'", "*.hana.ondemand.com", "www.loc.gov", "data:"]
+            defaultSrc: ["'self'", "*.hana.ondemand.com", "ui5.sap.com"],
+            styleSrc: ["'self'", "*.hana.ondemand.com", "ui5.sap.com", "'unsafe-inline'"],
+            scriptSrc: ["'self'", "*.hana.ondemand.com", "ui5.sap.com", "'unsafe-inline'", "'unsafe-eval'", "cdnjs.cloudflare.com"],
+            imgSrc: ["'self'", "*.hana.ondemand.com", "ui5.sap.com", "www.loc.gov", "data:"]
         }
     }))
     // Sets "Referrer-Policy: no-referrer".

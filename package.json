@@ -28,7 +28,9 @@
         "node-xlsx": "^0.23.0",
         "overload-protection": "^1.2.3",
         "swagger-jsdoc": "^6.2.8",
-        "upath": "^2.0.1"
+        "then-request": "^6.0.2",
+        "upath": "^2.0.1",
+        "ws": "^8.13.0"
     },
     "devDependencies": {
         "@cap-js/cds-typer": "^0.5.0",

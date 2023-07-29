@@ -3,15 +3,15 @@ export function getLocaleReq(req){
 
     let lang = req.headers["accept-language"]
     if (!lang) {
-        return null
+        return 'en-US'
     }
     var arr = langparser.parse(lang)
     if (!arr || arr.length < 1) {
-        return null
+        return 'en-US'
     }
     var locale = arr[0].code
     if (arr[0].region) {
-        locale += "_" + arr[0].region
+        locale += "-" + arr[0].region
     }
     return locale
 }

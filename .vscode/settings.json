@@ -5,6 +5,8 @@
         "cloudnative",
         "healthcheck",
         "langparser",
-        "timsestamp"
+        "ondemand",
+        "timsestamp",
+        "Wuthering"
     ]
 }

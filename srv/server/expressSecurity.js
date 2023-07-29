@@ -1,5 +1,5 @@
 import helmet from 'helmet'
-import basic_auth from '@sap/cds/lib/auth/basic-auth.js'
+//import basic_auth from '@sap/cds/lib/auth/basic-auth.js'
 export default function (app) {
     app.log(`Add Helmet`)
     app.use(helmet())
@@ -13,7 +13,9 @@ export default function (app) {
     }))
     // Sets "Referrer-Policy: no-referrer".
     app.use(helmet.referrerPolicy({ policy: "no-referrer" }))
-    const admin = ['cds.Subscriber', 'admin']
+
+    //Add back in for mocked testing of user authentication and authorization
+ /*    const admin = ['cds.Subscriber', 'admin']
     const builder = ['cds.ExtensionDeveloper', 'cds.UIFlexDeveloper']
     app.use(basic_auth(
         {
@@ -35,5 +37,5 @@ export default function (app) {
                 t2: { features: '*', },
             }
         }
-    ))
+    )) */
 }

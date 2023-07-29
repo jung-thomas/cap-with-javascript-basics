@@ -1,5 +1,5 @@
 import swaggerUI from 'swagger-ui-express'
-export default async function (app) {
+export async function load (app) {
     //const swaggerUi = require('swagger-ui-express')
 	const swaggerSpec = await app.swagger.getOpenAPI()
 

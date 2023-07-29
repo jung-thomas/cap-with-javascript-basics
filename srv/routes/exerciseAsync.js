@@ -7,7 +7,7 @@ import fileAsync from '../async/fileAsync.js'
 import httpClient from '../async/httpClient.js'
 import httpClient2 from '../async/httpClient2.js'
 
-export default function (app, server) {
+export function load (app, server) {
     app.use('/rest/excAsync', (req, res) => {
         var output =
             `<H1>Asynchronous Examples</H1></br> 

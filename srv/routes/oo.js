@@ -4,7 +4,7 @@ import ooTutorial2 from '../oo/ooTutorial2.js'
 import ooTutorial3 from '../oo/ooTutorial3.js'
 import ooTutorial4 from '../oo/ooTutorial4.js'
 
-export default function (app) {
+export function load (app) {
 
     //Hello Router
     app.get("/rest/oo/", (req, res) => {

@@ -1,7 +1,7 @@
 import * as utils from "../utils/general.js"
 import * as locale from "../utils/locale.js"
 
-export default function (app) {
+export function load (app) {
     /**
      * @swagger
      *

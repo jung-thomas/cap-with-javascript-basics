@@ -1,7 +1,7 @@
 import excel from 'node-xlsx'
 import bodyParser from 'body-parser'
 
-export default function (app) {
+export function load (app) {
     app.get("/rest/excel", (req, res) => {
 		var output =
 			`<H1>Excel Examples</H1></br>

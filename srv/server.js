@@ -68,11 +68,13 @@ export default async function (o) {
   let routesDir = path.join(__dirname, './routes/**/*.js')
   let files = await glob(upath.normalize(routesDir))
   if (files.length !== 0) {
-    for (let file of files) {
-      cds.log('nodejs').info(`Loading: ${file}`)
-      const { default: Route } = await import(`file://${file}`)
-      Route(o.app, o.app.httpServer)
-    }
+    let modules = await Promise.all(
+     files.map((file) => {
+        cds.log('nodejs').info(`Loading: ${file}`)
+        return import(`file://${file}`)
+      })
+    )
+    modules.forEach((module) => module.load(o.app, o.app.httpServer))
   }
   return o.app.httpServer
 }

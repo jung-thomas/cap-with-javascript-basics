@@ -27,6 +27,26 @@
             "authenticationType": "xsuaa"
         },
         {
+            "source": "/apiJS/(.*)",
+            "destination": "srv_api",
+            "csrfProtection": false,
+            "authenticationType": "xsuaa",
+            "scope": {
+                "GET": "$XSAPPNAME.Display",
+                "POST": [
+                    "$XSAPPNAME.Create"
+                ],
+                "PUT": [
+                    "$XSAPPNAME.Create"
+                ],
+                "DELETE": [
+                    "$XSAPPNAME.Delete"
+                ],
+                "default": "$XSAPPNAME.Display"
+            }
+
+        },        
+        {
             "source": "/api/(.*)",
             "destination": "srv_api",
             "csrfProtection": false,

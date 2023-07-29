@@ -3,7 +3,7 @@ export default function() {
 
     "</p>" +
     "<H1>Main Testing Entry Points</H1></br>" +
-    "<a href=\"/api/api-docs/\">/api/api-docs</a> - Swagger UI</br>" +
+    "<a href=\"/apiJS/api-docs/\">/apiJS/api-docs</a> - Swagger UI</br>" +
     "<a href=\"/\">/</a> - Launchpad</br>" +            
 
     "</p>" +

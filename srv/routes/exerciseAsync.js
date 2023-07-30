@@ -1,4 +1,5 @@
 import { WebSocketServer } from 'ws'
+import toc from '../utils/exampleTOC.js'
 import asyncLib from '../async/async.js'
 import dbAsync from '../async/databaseAsync.js'
 import dbAsync2 from '../async/databaseAsync2.js'
@@ -7,11 +8,12 @@ import fileAsync from '../async/fileAsync.js'
 import httpClient from '../async/httpClient.js'
 import httpClient2 from '../async/httpClient2.js'
 
-export function load (app, server) {
+export function load(app, server) {
     app.use('/rest/excAsync', (req, res) => {
-        var output =
+        let output =
             `<H1>Asynchronous Examples</H1></br> 
-			<a href="/exerciseAsync">/exerciseAsync</a> - Test Framework for Async Examples</br>`
+			<a href="/exerciseAsync">/exerciseAsync</a> - Test Framework for Async Examples</br>` +
+            toc()
         res.type("text/html").status(200).send(output)
     })
 
@@ -24,9 +26,12 @@ export function load (app, server) {
 
         //Handle Upgrade Event
         server.on("upgrade", (request, socket, head) => {
-            wss.handleUpgrade(request, socket, head, (ws) => {
-                wss.emit("connection", ws, request)
-            })
+            console.log(request.url)
+            if (request.url === '/rest/excAsync') {
+                wss.handleUpgrade(request, socket, head, (ws) => {
+                    wss.emit("connection", ws, request)
+                })
+            }
         })
 
         //Broadcast function

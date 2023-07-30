@@ -7,21 +7,21 @@ export function load(app) {
     app.get("/rest/JavaScriptBasics", (req, res) => {
         let output =
             `<H1>JavaScript Basics</H1></br>
-			<a href="./JavaScriptBasics/dates">/dates</a> - Date processing</br>
-			<a href="./JavaScriptBasics/array">/array</a> - Array processing</br>
-			<a href="./JavaScriptBasics/json">/json</a> - JSON JavaScript Object Notation processing</br>
-			<a href="./JavaScriptBasics/objects">/objects</a> - JavaScript Objects</br>
-			<a href="./JavaScriptBasics/strings">/strings</a> - String processing</br>
-			<a href="./JavaScriptBasics/classes">/classes</a> - JavaScript Classes</br>			
-			<a href="./JavaScriptBasics/promises">/promises</a> - Promises</br>
-			<a href="./JavaScriptBasics/constants">/constants</a> - Constants</br>
-			<a href="./JavaScriptBasics/blockScoped">/blockScoped</a> - Block-Scoped Variables and Functions</br>	
-			<a href="./JavaScriptBasics/parameterDefaults">/parameterDefaults</a> - Parameter Defaults</br>	
-			<a href="./JavaScriptBasics/parameterMultiple">/parameterMultiple</a> - Handling unknown number of input parameters easily</br>		
-			<a href="./JavaScriptBasics/unicode">/unicode</a> - Unicode Strings and Literals</br>
-			<a href="./JavaScriptBasics/numFormat">/numFormat</a> - International Number Formatting</br>	
-			<a href="./JavaScriptBasics/currFormat">/currFormat</a> - International Currency Formatting</br>
-			<a href="./JavaScriptBasics/dateFormat">/dateFormat</a> - International Date/Time Formatting</br>` +
+			<a href="./dates">/dates</a> - Date processing</br>
+			<a href="./array">/array</a> - Array processing</br>
+			<a href="./json">/json</a> - JSON JavaScript Object Notation processing</br>
+			<a href="./objects">/objects</a> - JavaScript Objects</br>
+			<a href="./strings">/strings</a> - String processing</br>
+			<a href="./classes">/classes</a> - JavaScript Classes</br>			
+			<a href="./promises">/promises</a> - Promises</br>
+			<a href="./constants">/constants</a> - Constants</br>
+			<a href="./blockScoped">/blockScoped</a> - Block-Scoped Variables and Functions</br>	
+			<a href="./parameterDefaults">/parameterDefaults</a> - Parameter Defaults</br>	
+			<a href="./parameterMultiple">/parameterMultiple</a> - Handling unknown number of input parameters easily</br>		
+			<a href="./unicode">/unicode</a> - Unicode Strings and Literals</br>
+			<a href="./numFormat">/numFormat</a> - International Number Formatting</br>	
+			<a href="./currFormat">/currFormat</a> - International Currency Formatting</br>
+			<a href="./dateFormat">/dateFormat</a> - International Date/Time Formatting</br>` +
             toc()
         res.type("text/html").status(200).send(output)
     })

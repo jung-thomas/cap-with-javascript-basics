@@ -329,7 +329,7 @@ export function load(app) {
 	 */		
 	app.get("/rest/ex2/osUser", (req, res, next) => {
 		var exec = child_process.exec
-		exec("whoami", (e, stdout, stderr) => {
+		exec("whoami", (e, stdout) => {
 			if (e) {
                 app.log.error(e)
                 let error = new cds.error(e)

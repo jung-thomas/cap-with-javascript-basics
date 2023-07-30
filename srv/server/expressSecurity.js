@@ -8,7 +8,7 @@ export default function (app) {
             defaultSrc: ["'self'", "*.hana.ondemand.com", "ui5.sap.com"],
             styleSrc: ["'self'", "*.hana.ondemand.com", "ui5.sap.com", "'unsafe-inline'"],
             scriptSrc: ["'self'", "*.hana.ondemand.com", "ui5.sap.com", "'unsafe-inline'", "'unsafe-eval'", "cdnjs.cloudflare.com"],
-            imgSrc: ["'self'", "*.hana.ondemand.com", "ui5.sap.com", "www.loc.gov", "data:"]
+            imgSrc: ["'self'", "*.hana.ondemand.com", "ui5.sap.com", "*.loc.gov", "data:"]
         }
     }))
     // Sets "Referrer-Policy: no-referrer".

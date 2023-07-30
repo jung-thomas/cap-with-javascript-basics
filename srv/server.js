@@ -9,6 +9,7 @@ import express from 'express'
 
 // @ts-ignore
 const __dirname = fileURLToPath(new URL('.', import.meta.url))
+global.__base = __dirname
 let app
 
 cds

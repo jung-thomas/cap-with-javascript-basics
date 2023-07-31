@@ -15,9 +15,7 @@ sap.ui.define([
         onInit: function () {
             // connection opened 
             connection.attachOpen((oControlEvent) => {
-                sap.ui.require(["sap/m/MessageToast"], (MessageToast) => {
-                    MessageToast.show("connection opened")
-                })
+                MessageToast.show("connection opened")
             })
 
             // server messages

@@ -28,40 +28,46 @@ export function load(app, server) {
         })
 
         //Broadcast function
-		wss.broadcast = (data) => {
-			wss.clients.forEach((client) => {
-				try {
-					client.send(data, (error) => {
-						if (typeof error !== "undefined") {
-							cds.log('nodejs').error(`Send Error: ${error}`)
-						}
-					})
-				} catch (e) {
-					cds.log('nodejs').error(`Broadcast Error: ${e}`)
-				}
-			})
-            cds.log('nodejs').info(`Sent: ${data}`)
-		}
+        wss.broadcast = (data) => {
+            let message = JSON.stringify(data)
+            wss.clients.forEach((client) => {                
+                try {
+                    client.send(message, (error) => {
+                        if (error !== null && typeof error !== "undefined") {
+                            cds.log('nodejs').error(`Send Error: ${error}`)
+                        }
+                    })
+                } catch (e) {
+                    cds.log('nodejs').error(`Broadcast Error: ${e}`)
+                }
+            })
+            cds.log('nodejs').info(`Sent: ${message}`)
+        }
 
         //Web Socket Error Handler 
         wss.on("error", (error) => {
             cds.log('nodejs').error(`Web Socket Server Error: ${error}`)
         })
-        
+
         //Web Socket Connection        
         wss.on("connection", (ws) => {
             cds.log('nodejs').info("Connected")
-            
+
             //Web Socket Message Received
             ws.on("message", (message) => {
-                cds.log('nodejs').info(`Received: ${message}`)
-                wss.broadcast(message)
+                let data = JSON.parse(message)
+                cds.log('nodejs').info(data)
+                wss.broadcast(data)
             })
-            
+
             ws.send(JSON.stringify({
                 user: "Node",
                 text: "Hello from Node.js Server"
-            }))
+            }), (error) => {
+                if (error !== null && typeof error !== "undefined") {
+                    cds.log('nodejs').error(`Send Error: ${error}`)
+                }
+            })
         })
 
 

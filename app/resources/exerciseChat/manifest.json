@@ -1,7 +1,7 @@
 {
 	"_version": "1.33.0",
 	"sap.app": {
-		"id": "sap.sample.multiply",
+		"id": "sap.sample.exerciseChat",
 		"type": "application",
 		"i18n": "i18n/i18n.properties",
 		"applicationVersion": {
@@ -50,13 +50,19 @@
 			"cozy": true
 		},
 		"models": {
+			"chatModel": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {
+					"defaultBindingMode": "TwoWay"
+				}
+			},
 			"config": {
 				"type": "sap.ui.model.json.JSONModel"
 			},
 			"i18n": {
 				"type": "sap.ui.model.resource.ResourceModel",
 				"settings": {
-					"bundleName": "sap.sample.multiply.i18n.i18n"
+					"bundleName": "sap.sample.exerciseChat.i18n.i18n"
 				}
 			},
 			"i18nReuse": {
@@ -76,7 +82,7 @@
 				"routerClass": "sap.m.routing.Router",
 				"viewType": "XML",
 				"async": true,
-				"viewPath": "sap.sample.multiply.view",
+				"viewPath": "sap.sample.exerciseChat.view",
 				"controlAggregation": "pages",
 				"controlId": "app",
 				"clearControlAggregation": false

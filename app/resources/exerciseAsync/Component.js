@@ -1,11 +1,11 @@
 /* eslint-disable no-undef */
 /*eslint-env es6 */
 sap.ui.define([
-    "sap/common/Component"
+    "sap/sample/common/Component"
 ], function (UIComponent) {
     "use strict";
 
-    return UIComponent.extend("sap.exerciseAsync.Component", {
+    return UIComponent.extend("sap.sample.exerciseAsync.Component", {
 
         metadata: {
             manifest: "json"
@@ -15,7 +15,7 @@ sap.ui.define([
             // create root view
             var oView = sap.ui.view({
                 id: "App",
-                viewName: `sap.exerciseAsync.view.App`,
+                viewName: `sap.sample.exerciseAsync.view.App`,
                 type: "XML",
                 async: true,
                 viewData: {

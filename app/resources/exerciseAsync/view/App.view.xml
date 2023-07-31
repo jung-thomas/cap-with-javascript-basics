@@ -1,4 +1,4 @@
-<mvc:View controllerName="sap.exerciseAsync.controller.App" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc"
+<mvc:View controllerName="sap.sample.exerciseAsync.controller.App" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc"
 	height="100%">
 	<ScrollContainer id="contaier" height="100%" width="100%" horizontal="true" vertical="true">
 		<Panel id="panel" headerText="Node.js Async Test Framework" expandable="true" expanded="true">

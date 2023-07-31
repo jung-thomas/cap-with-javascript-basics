@@ -2,7 +2,7 @@
 /*eslint-env es6 */
 //To use a javascript controller its name must end with .controller.js
 sap.ui.define([
-    "sap/common/controller/BaseController",
+    "sap/sample/common/controller/BaseController",
     "sap/ui/model/json/JSONModel",
     "sap/ui/core/ws/WebSocket",
     "sap/m/MessageToast"
@@ -10,7 +10,7 @@ sap.ui.define([
     "use strict";
     var connection = new WebSocket("/rest/excAsync")
 
-    return BaseController.extend("sap.exerciseAsync.controller.App", {
+    return BaseController.extend("sap.sample.exerciseAsync.controller.App", {
 
         onInit: function () {
             // connection opened 

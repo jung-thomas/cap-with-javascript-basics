@@ -1,7 +1,7 @@
 {
 	"_version": "1.33.0",
 	"sap.app": {
-		"id": "sap.exerciseAsync",
+		"id": "sap.sample.exerciseAsync",
 		"type": "application",
 		"i18n": "i18n/i18n.properties",
 		"applicationVersion": {
@@ -34,7 +34,7 @@
 
 	"sap.ui5": {
 		"resourceRoots": {
-			"sap.common": "../common"
+			"sap.sample.common": "../common"
 		},
 		"flexEnabled": true,
 		"dependencies": {
@@ -62,7 +62,7 @@
 			"i18n": {
 				"type": "sap.ui.model.resource.ResourceModel",
 				"settings": {
-					"bundleName": "sap.exerciseAsync.i18n.i18n"
+					"bundleName": "sap.sample.exerciseAsync.i18n.i18n"
 				}
 			},
 			"i18nReuse": {
@@ -82,7 +82,7 @@
 				"routerClass": "sap.m.routing.Router",
 				"viewType": "XML",
 				"async": true,
-				"viewPath": "sap.exerciseAsync.view",
+				"viewPath": "sap.sample.exerciseAsync.view",
 				"controlAggregation": "pages",
 				"controlId": "app",
 				"clearControlAggregation": false

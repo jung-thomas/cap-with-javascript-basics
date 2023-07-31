@@ -3,11 +3,11 @@
 sap.ui.define([
     "sap/ui/core/UIComponent",
     "sap/ui/Device",
-    "sap/common/model/models"
+    "sap/sample/common/model/models"
 ],  function (UIComponent, Device, models) {
     "use strict"
 
-    return UIComponent.extend("sap.common.Component", {
+    return UIComponent.extend("sap.sample.common.Component", {
 
         superInit() {
                    

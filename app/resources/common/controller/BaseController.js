@@ -8,7 +8,7 @@ sap.ui.define([
 ], function (Controller, History, Fragment, syncStyleClass) {
     "use strict";
 
-    return Controller.extend("sap.common.controller.BaseController", {
+    return Controller.extend("sap.sample.common.controller.BaseController", {
         /**
          * Convenience method for accessing the router in every controller of the application.
          * @public
